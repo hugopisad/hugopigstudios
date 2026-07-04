@@ -3,79 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hugopigstudio Website</title>
+    <title>Hugopigstudios</title>
     <style>
-        /* Reset default margins */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
+            background: #111;
+            color: #ccc;
+            font-family: monospace;
+            padding: 20px;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
-        /* Topbar Styles */
-        .topbar {
-            background-color: #333;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            width: 100%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .topbar h1 {
-            font-size: 1.5rem;
+        h1, h2, h3 {
+            color: #fff;
             font-weight: normal;
         }
 
-        /* Main Content Area (Centers the button) */
-        .content {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        h1 {
+            margin-bottom: 5px;
         }
 
-        /* YouTube Button Styles */
-        .youtube-btn {
-            background-color: #ff0000; /* YouTube Red */
-            color: white;
+        a {
+            color: #ff4757;
             text-decoration: none;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 25px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: background-color 0.2s ease, transform 0.2s ease;
         }
 
-        /* Hover effect for the button */
-        .youtube-btn:hover {
-            background-color: #cc0000;
-            transform: scale(1.05);
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .links {
+            margin-bottom: 40px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .game-item {
+            border: 1px solid #333;
+            padding: 20px;
+            margin-top: 15px;
+            background: #161616;
+        }
+
+        .game-meta {
+            margin-bottom: 15px;
+        }
+
+        .game-icon {
+            width: 64px;
+            height: 64px;
+            background: #222;
+            float: left;
+            margin-right: 15px;
+            border: 1px solid #444;
+        }
+
+        .game-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .iframe-wrapper {
+            margin-top: 15px;
+            border: 1px solid #333;
+            background: #000;
+        }
+
+        iframe {
+            display: block;
+            width: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
 
-    <!-- Topbar -->
-    <div class="topbar">
-        <h1>Welcome to Hugopigstudio's Website</h1>
+    <h1>Hugopigstudios</h1>
+    <p style="margin-top: 0; color: #777;">Solo Game Developer</p>
+
+    <div class="links">
+        <a href="https://www.youtube.com/@Hugopigstudios" target="_blank">YouTube</a> | 
+        <a href="https://hugopigstudios.itch.io" target="_blank">Itch.io</a>
     </div>
 
-    <!-- Center Content -->
-    <div class="content">
-        <a href="https://www.youtube.com/@Hugopigstudios" target="_blank" class="youtube-btn">
-            Subscribe on YouTube
-        </a>
-    </div>
+    <section>
+        <h2>About Me</h2>
+        <p>I make indie games and run the Hugopigstudios YouTube channel. I handle the programming, design, and everything else that goes into making games as a solo dev.</p>
+    </section>
+
+    <section>
+        <h2>Games</h2>
+        
+        <div class="game-item">
+            <div class="game-meta">
+                <div class="game-icon">
+                    <img src="icon.png" alt="" onerror="this.style.display='none';">
+                </div>
+                <strong style="font-size: 1.2rem;"><a href="https://hugopigstudios.itch.io/scrap-racers" target="_blank">Scrap Racers</a></strong>
+                <p style="margin: 5px 0 0 0; color: #777;">Released on Itch.io</p>
+            </div>
+            
+            <div class="clear"></div>
+            
+            <div class="iframe-wrapper">
+                <iframe src="https://itch.io/embed/3044161?bg_color=161616&amp;fg_color=ccc&amp;link_color=ff4757" width="552" height="167"><a href="https://hugopigstudios.itch.io/scrap-racers">Scrap Racers by Hugopigstudios</a></iframe>
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>
