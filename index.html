@@ -1,114 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HugoPigStudios</title>
-    <style>
-        body {
-            background: #111;
-            color: #ccc;
-            font-family: monospace;
-            padding: 20px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HugoPigStudios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #eee3cd;
+    --paper2: #e5d6b8;
+    --ink: #1b1b1b;
+    --pink: #ff3d68;
+    --blue: #2b4bd6;
+    --yellow: #ffcf3f;
+  }
 
-        h1, h2, h3 {
-            color: #fff;
-            font-weight: normal;
-        }
+  *{ box-sizing: border-box; }
 
-        h1 {
-            margin-bottom: 5px;
-        }
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+  }
 
-        a {
-            color: #ff4757;
-            text-decoration: none;
-        }
+  html{ background: var(--paper2); }
 
-        a:hover {
-            text-decoration: underline;
-        }
+  body{
+    background:
+      radial-gradient(circle at 1px 1px, rgba(0,0,0,0.06) 1px, transparent 0) 0 0/16px 16px,
+      var(--paper);
+    color: var(--ink);
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: 16px;
+    line-height: 1.55;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 20px 50px;
+  }
 
-        .links {
-            margin-bottom: 40px;
-        }
+  a{ color: var(--blue); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  a:hover{ color: var(--pink); }
 
-        section {
-            margin-bottom: 40px;
-        }
+  /* ---------- header ---------- */
 
-        .game-item {
-            border: 1px solid #333;
-            padding: 20px;
-            margin-top: 15px;
-            background: #161616;
-        }
+  .masthead{
+    background: var(--ink);
+    color: var(--paper);
+    padding: 22px 24px 20px;
+    transform: rotate(-0.6deg);
+    box-shadow: 6px 6px 0 var(--pink);
+    margin-bottom: 34px;
+    position: relative;
+  }
 
-        .game-meta {
-            margin-bottom: 15px;
-        }
+  h1{
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(28px, 6vw, 40px);
+    margin: 0;
+    letter-spacing: 0.5px;
+    line-height: 1;
+  }
+  h1 span.pig{
+    color: var(--yellow);
+  }
 
-        .iframe-wrapper {
-            margin-top: 15px;
-            border: 1px solid #333;
-            background: #000;
-        }
+  .tagline{
+    font-size: 13px;
+    margin: 10px 0 0;
+    color: var(--paper2);
+    letter-spacing: 0.5px;
+  }
 
-        iframe {
-            display: block;
-            width: 100%;
-            border: none;
-        }
+  .badge{
+    position: absolute;
+    top: -14px;
+    right: -10px;
+    background: var(--yellow);
+    color: var(--ink);
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 11px;
+    padding: 7px 10px;
+    transform: rotate(8deg);
+    box-shadow: 3px 3px 0 var(--ink);
+    border: 2px solid var(--ink);
+  }
 
-        footer {
-            margin-top: 60px;
-            border-top: 1px solid #222;
-            padding-top: 20px;
-            font-size: 0.8rem;
-            color: #555;
-            line-height: 1.4;
-        }
-    </style>
+  nav.links{
+    margin-top: 30px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  nav.links a{
+    display: inline-block;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    padding: 10px 14px;
+    border: 2px solid var(--ink);
+    box-shadow: 3px 3px 0 var(--ink);
+    text-decoration: none;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  nav.links a:hover{
+    color: var(--ink);
+    transform: translate(-2px,-2px);
+    box-shadow: 5px 5px 0 var(--pink);
+  }
+
+  /* ---------- sections ---------- */
+
+  section{ margin-bottom: 46px; }
+
+  h2{
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+    display: inline-block;
+    background: var(--yellow);
+    padding: 3px 10px 4px;
+    transform: rotate(-1deg);
+    border: 2px solid var(--ink);
+  }
+
+  .about p{
+    max-width: 58ch;
+    margin: 0;
+  }
+
+  /* ---------- game card ---------- */
+
+  .game-item{
+    background: #fff;
+    border: 2px solid var(--ink);
+    box-shadow: 7px 7px 0 var(--ink);
+    padding: 20px 20px 22px;
+    transform: rotate(0.5deg);
+    margin-top: 6px;
+  }
+
+  .game-meta{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 2px dashed #cfc4a8;
+  }
+
+  .game-title{
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 20px;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 3px solid var(--pink);
+  }
+  .game-title:hover{ color: var(--pink); }
+
+  .game-status{
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: var(--blue);
+    color: #fff;
+    padding: 5px 8px;
+    transform: rotate(-3deg);
+    white-space: nowrap;
+  }
+
+  .iframe-wrapper{
+    background: var(--paper2);
+    border: 2px solid var(--ink);
+    padding: 8px;
+  }
+  iframe{
+    display: block;
+    width: 100%;
+    border: none;
+  }
+
+  /* ---------- footer ---------- */
+
+  footer{
+    margin-top: 60px;
+    padding-top: 18px;
+    border-top: 3px solid var(--ink);
+    font-size: 11px;
+    color: #6b6252;
+    line-height: 1.6;
+  }
+  footer p{ margin: 0 0 4px; }
+
+  @media (max-width: 480px){
+    body{ font-size: 14px; padding: 28px 14px 40px; }
+    .masthead{ padding: 18px 18px 16px; box-shadow: 4px 4px 0 var(--pink); }
+    .game-item{ box-shadow: 5px 5px 0 var(--ink); }
+  }
+</style>
 </head>
 <body>
 
-    <h1>HugoPigStudios</h1>
-    <p style="margin-top: 0; color: #777;">Solo Game Developer</p>
+<div class="masthead">
+  <h1>Hugo<span class="pig">Pig</span>Studios</h1>
+  <p class="tagline">one guy, low quality games, idk what else</p>
+  <div class="badge">solo dev</div>
+  <nav class="links">
+    <a href="https://www.youtube.com/@Hugopigstudios" target="_blank">YouTube</a>
+    <a href="https://hugopigstudios.itch.io" target="_blank">Itch.io</a>
+  </nav>
+</div>
 
-    <div class="links">
-        <a href="https://www.youtube.com/@Hugopigstudios" target="_blank">YouTube</a> | 
-        <a href="https://hugopigstudios.itch.io" target="_blank">Itch.io</a>
+<section class="about">
+  <h2>About</h2>
+  <p>I make indie games and programming, design, art, and sound, all done by one person (me).</p>
+</section>
+
+<section>
+  <h2>Games</h2>
+
+  <div class="game-item">
+    <div class="game-meta">
+      <a class="game-title" href="https://hugopigstudios.itch.io/scrap-racers" target="_blank">Scrap Racers</a>
+      <span class="game-status">out now</span>
     </div>
+    <div class="iframe-wrapper">
+      <iframe src="https://itch.io/embed/4408849?bg_color=eee3cd&fg_color=1b1b1b&link_color=2b4bd6" width="552" height="167">
+        <a href="https://hugopigstudios.itch.io/scrap-racers">Scrap Racers by HugoPigStudios</a>
+      </iframe>
+    </div>
+  </div>
+</section>
 
-    <section>
-        <h2>About Me</h2>
-        <p>I make indie games and run the HugoPigStudios YouTube channel. I handle the programming, design, and everything else that goes into making games as a solo dev.</p>
-    </section>
-
-    <section>
-        <h2>Games</h2>
-        
-        <div class="game-item">
-            <div class="game-meta">
-                <strong style="font-size: 1.2rem;"><a href="https://hugopigstudios.itch.io/scrap-racers" target="_blank">Scrap Racers</a></strong>
-                <p style="margin: 5px 0 0 0; color: #777;">Released on Itch.io</p>
-            </div>
-            
-            <div class="iframe-wrapper">
-                <iframe src="https://itch.io/embed/4408849?bg_color=161616&amp;fg_color=ccc&amp;link_color=ff4757" width="552" height="167">
-                    <a href="https://hugopigstudios.itch.io/scrap-racers">Scrap Racers by HugoPigStudios</a>
-                </iframe>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 HugoPigStudios. HugoPigStudios&trade; and associated logos are trademarks of HugoPigStudios. All rights reserved.</p>
-        <p style="margin-top: 5px;">Profile graphics use assets from Twemoji (Copyright Twitter, Inc and contributors), licensed under CC-BY 4.0.</p>
-    </footer>
+<footer>
+  <p>&copy; 2026 HugoPigStudios. HugoPigStudios&trade; and associated logos are trademarks of HugoPigStudios. All rights reserved.</p>
+  <p>Profile graphics use assets from Twemoji (Copyright Twitter, Inc and contributors), licensed under CC-BY 4.0.</p>
+</footer>
 
 </body>
 </html>
