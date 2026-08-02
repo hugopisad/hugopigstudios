@@ -3,10 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HugoPigStudios</title>
+
+<title>HugoPig Studios | Indie Game Developer | Unity Games</title>
+
+<meta name="description" content="HugoPig Studios is a solo indie game developer creating Unity games including Scrap Racers and other creative projects.">
+<meta name="keywords" content="HugoPig Studios,HugoPig,Hugopig,HugoPigStudios,indie games,indie game developer,Unity,Unity games,Scrap Racers,Build Yard,game development,PC games,itch.io,solo developer">
+<meta name="author" content="HugoPig Studios">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#1b1b1b">
+
+<link rel="canonical" href="https://www.hugopigstudios.xyz/">
+<link rel="icon" type="image/png" href="logo.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="HugoPig Studios | Indie Game Developer">
+<meta property="og:description" content="Solo indie game developer creating Unity games like Scrap Racers.">
+<meta property="og:url" content="https://www.hugopigstudios.xyz/">
+<meta property="og:site_name" content="HugoPig Studios">
+<meta property="og:image" content="https://www.hugopigstudios.xyz/logo.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HugoPig Studios">
+<meta name="twitter:description" content="Solo indie game developer creating Unity games.">
+<meta name="twitter:image" content="https://www.hugopigstudios.xyz/logo.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"HugoPig Studios",
+  "url":"https://www.hugopigstudios.xyz/",
+  "logo":"https://www.hugopigstudios.xyz/logo.png",
+  "description":"Solo indie game developer creating Unity games.",
+  "sameAs":[
+    "https://hugopigstudios.itch.io",
+    "https://www.youtube.com/@Hugopigstudios"
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
   :root{
     --paper: #eee3cd;
@@ -41,8 +83,6 @@
   a{ color: var(--blue); text-decoration-thickness: 2px; text-underline-offset: 3px; }
   a:hover{ color: var(--pink); }
 
-  /* ---------- header ---------- */
-
   .masthead{
     background: var(--ink);
     color: var(--paper);
@@ -60,6 +100,7 @@
     letter-spacing: 0.5px;
     line-height: 1;
   }
+
   h1 span.pig{
     color: var(--yellow);
   }
@@ -91,6 +132,7 @@
     gap: 12px;
     flex-wrap: wrap;
   }
+
   nav.links a{
     display: inline-block;
     background: var(--paper);
@@ -104,13 +146,12 @@
     text-decoration: none;
     transition: transform 0.12s ease, box-shadow 0.12s ease;
   }
+
   nav.links a:hover{
     color: var(--ink);
     transform: translate(-2px,-2px);
     box-shadow: 5px 5px 0 var(--pink);
   }
-
-  /* ---------- sections ---------- */
 
   section{ margin-bottom: 46px; }
 
@@ -131,8 +172,6 @@
     max-width: 58ch;
     margin: 0;
   }
-
-  /* ---------- game card ---------- */
 
   .game-item{
     background: #fff;
@@ -161,7 +200,10 @@
     text-decoration: none;
     border-bottom: 3px solid var(--pink);
   }
-  .game-title:hover{ color: var(--pink); }
+
+  .game-title:hover{
+    color: var(--pink);
+  }
 
   .game-status{
     font-family: 'Archivo Black', sans-serif;
@@ -180,13 +222,12 @@
     border: 2px solid var(--ink);
     padding: 8px;
   }
+
   iframe{
     display: block;
     width: 100%;
     border: none;
   }
-
-  /* ---------- footer ---------- */
 
   footer{
     margin-top: 60px;
@@ -196,12 +237,25 @@
     color: #6b6252;
     line-height: 1.6;
   }
-  footer p{ margin: 0 0 4px; }
+
+  footer p{
+    margin: 0 0 4px;
+  }
 
   @media (max-width: 480px){
-    body{ font-size: 14px; padding: 28px 14px 40px; }
-    .masthead{ padding: 18px 18px 16px; box-shadow: 4px 4px 0 var(--pink); }
-    .game-item{ box-shadow: 5px 5px 0 var(--ink); }
+    body{
+      font-size: 14px;
+      padding: 28px 14px 40px;
+    }
+
+    .masthead{
+      padding: 18px 18px 16px;
+      box-shadow: 4px 4px 0 var(--pink);
+    }
+
+    .game-item{
+      box-shadow: 5px 5px 0 var(--ink);
+    }
   }
 </style>
 </head>
@@ -211,6 +265,7 @@
   <h1>Hugo<span class="pig">Pig</span>Studios</h1>
   <p class="tagline">one guy, working on multiple games, using unity</p>
   <div class="badge">solo dev</div>
+
   <nav class="links">
     <a href="https://www.youtube.com/@Hugopigstudios" target="_blank">YouTube</a>
     <a href="https://hugopigstudios.itch.io" target="_blank">Itch.io</a>
@@ -230,6 +285,7 @@
       <a class="game-title" href="https://hugopigstudios.itch.io/scrap-racers" target="_blank">Scrap Racers</a>
       <span class="game-status">out now</span>
     </div>
+
     <div class="iframe-wrapper">
       <iframe src="https://itch.io/embed/4408849?bg_color=eee3cd&fg_color=1b1b1b&link_color=2b4bd6" width="552" height="167">
         <a href="https://hugopigstudios.itch.io/scrap-racers">Scrap Racers by HugoPigStudios</a>
