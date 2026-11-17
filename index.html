@@ -11,7 +11,7 @@
 <meta name="keywords" content="HugoPig Studios,HugoPig,Hugopig,HugoPigStudios,indie games,indie game developer,Unity,Unity games,Scrap Racers,Da Artist,Build Yard,game development,PC games,itch.io,solo developer">
 <meta name="author" content="HugoPig Studios">
 <meta name="robots" content="index,follow">
-<meta name="theme-color" content="#1b1b1b">
+<meta name="theme-color" content="#17141b">
 
 <link rel="canonical" href="https://www.hugopigstudios.xyz/">
 <link rel="icon" type="image/png" href="logo.png">
@@ -52,12 +52,16 @@
 
 <style>
   :root{
-    --paper: #eee3cd;
-    --paper2: #e5d6b8;
-    --ink: #1b1b1b;
+    --bg: #17141b;
+    --card: #23202a;
+    --card2: #1b1820;
+    --cream: #eee3cd;
+    --muted: #9a93a3;
+    --line: #4a4453;
     --pink: #ff3d68;
-    --blue: #2b4bd6;
-    --yellow: #ffcf3f;
+    --blue: #3f5cf0;
+    --link: #8ea0ff;
+    --red: #e5202f;
   }
 
   *{ box-sizing: border-box; }
@@ -66,26 +70,22 @@
     *{ animation: none !important; transition: none !important; }
   }
 
-  html{
-    background: linear-gradient(160deg, #ffd9e4 0%, #f3d1dc 35%, #d9d6da 70%, #bdbdc2 100%);
-    background-attachment: fixed;
-    min-height: 100%;
-  }
+  html{ background: var(--bg); }
 
   body{
-    background: transparent;
-    color: var(--ink);
+    background:
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.06) 1px, transparent 0) 0 0/16px 16px,
+      var(--bg);
+    color: var(--cream);
     font-family: 'Space Mono', 'Courier New', monospace;
     font-size: 16px;
     line-height: 1.55;
     max-width: 720px;
     margin: 0 auto;
     padding: 30px 20px 50px;
-    position: relative;
-    z-index: 1;
   }
 
-  a{ color: var(--blue); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  a{ color: var(--link); text-decoration-thickness: 2px; text-underline-offset: 3px; }
   a:hover{ color: var(--pink); }
 
   /* countdown */
@@ -98,13 +98,13 @@
   }
 
   .cd-box{
-    background: rgba(20,8,45,0.78);
-    border: 2px solid var(--yellow);
+    background: var(--card);
+    border: 2px solid var(--pink);
     box-shadow: 4px 4px 0 var(--pink);
     padding: 10px 12px 8px;
     min-width: 76px;
     text-align: center;
-    color: #fff;
+    color: var(--cream);
   }
 
   .cd-num{
@@ -112,21 +112,21 @@
     font-size: clamp(26px, 8vw, 40px);
     line-height: 1;
     display: block;
-    text-shadow: 0 0 12px rgba(255,207,63,0.8);
   }
 
   .cd-label{
     font-size: 10px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--yellow);
+    color: var(--pink);
     margin-top: 6px;
     display: block;
   }
 
   .masthead{
-    background: var(--ink);
-    color: var(--paper);
+    background: var(--card);
+    color: var(--cream);
+    border: 2px solid var(--cream);
     padding: 22px 24px 20px;
     transform: rotate(-0.6deg);
     box-shadow: 6px 6px 0 var(--pink);
@@ -143,13 +143,13 @@
   }
 
   h1 span.pig{
-    color: var(--yellow);
+    color: var(--pink);
   }
 
   .tagline{
     font-size: 13px;
     margin: 10px 0 0;
-    color: var(--paper2);
+    color: var(--muted);
     letter-spacing: 0.5px;
   }
 
@@ -157,14 +157,14 @@
     position: absolute;
     top: -14px;
     right: -10px;
-    background: var(--yellow);
-    color: var(--ink);
+    background: var(--pink);
+    color: #17141b;
     font-family: 'Archivo Black', sans-serif;
     font-size: 11px;
     padding: 7px 10px;
     transform: rotate(8deg);
-    box-shadow: 3px 3px 0 var(--ink);
-    border: 2px solid var(--ink);
+    box-shadow: 3px 3px 0 #000;
+    border: 2px solid #17141b;
   }
 
   nav.links{
@@ -176,20 +176,20 @@
 
   nav.links a{
     display: inline-block;
-    background: var(--paper);
-    color: var(--ink);
+    background: var(--bg);
+    color: var(--cream);
     font-family: 'Archivo Black', sans-serif;
     font-size: 12px;
     letter-spacing: 0.5px;
     padding: 10px 14px;
-    border: 2px solid var(--ink);
-    box-shadow: 3px 3px 0 var(--ink);
+    border: 2px solid var(--cream);
+    box-shadow: 3px 3px 0 var(--line);
     text-decoration: none;
     transition: transform 0.12s ease, box-shadow 0.12s ease;
   }
 
   nav.links a:hover{
-    color: var(--ink);
+    color: var(--cream);
     transform: translate(-2px,-2px);
     box-shadow: 5px 5px 0 var(--pink);
   }
@@ -203,25 +203,26 @@
     text-transform: uppercase;
     margin: 0 0 16px;
     display: inline-block;
-    background: var(--yellow);
+    background: var(--pink);
+    color: #17141b;
     padding: 3px 10px 4px;
     transform: rotate(-1deg);
-    border: 2px solid var(--ink);
+    border: 2px solid #17141b;
   }
 
   .about p{
     max-width: 58ch;
     margin: 0;
-    background: var(--paper);
-    border: 2px solid var(--ink);
-    box-shadow: 5px 5px 0 var(--ink);
+    background: var(--card);
+    border: 2px solid var(--cream);
+    box-shadow: 5px 5px 0 #000;
     padding: 14px 16px;
   }
 
   .game-item{
-    background: #fff;
-    border: 2px solid var(--ink);
-    box-shadow: 7px 7px 0 var(--ink);
+    background: var(--card);
+    border: 2px solid var(--cream);
+    box-shadow: 7px 7px 0 #000;
     padding: 20px 20px 22px;
     transform: rotate(0.5deg);
     margin-top: 6px;
@@ -240,19 +241,23 @@
     gap: 10px;
     margin-bottom: 14px;
     padding-bottom: 12px;
-    border-bottom: 2px dashed #cfc4a8;
+    border-bottom: 2px dashed var(--line);
   }
 
   .game-title{
     font-family: 'Archivo Black', sans-serif;
     font-size: 20px;
-    color: var(--ink);
+    color: var(--cream);
     text-decoration: none;
     border-bottom: 3px solid var(--pink);
   }
 
   a.game-title:hover{
     color: var(--pink);
+  }
+
+  .game-title.scrap{
+    border-bottom-color: var(--blue);
   }
 
   .game-status{
@@ -267,9 +272,13 @@
     white-space: nowrap;
   }
 
+  .game-status.red{
+    background: var(--red);
+  }
+
   .iframe-wrapper{
-    background: var(--paper2);
-    border: 2px solid var(--ink);
+    background: var(--card2);
+    border: 2px solid var(--cream);
     padding: 8px;
   }
 
@@ -282,9 +291,9 @@
   footer{
     margin-top: 60px;
     padding-top: 18px;
-    border-top: 3px solid var(--ink);
+    border-top: 3px solid var(--cream);
     font-size: 11px;
-    color: #5a5560;
+    color: var(--muted);
     line-height: 1.6;
   }
 
@@ -292,7 +301,7 @@
     margin: 0 0 4px;
   }
 
-  footer a{ color: var(--blue); }
+  footer a{ color: var(--link); }
 
   @media (max-width: 480px){
     body{
@@ -308,7 +317,7 @@
     }
 
     .game-item{
-      box-shadow: 5px 5px 0 var(--ink);
+      box-shadow: 5px 5px 0 #000;
     }
   }
 </style>
@@ -343,12 +352,12 @@
 
   <div class="game-item">
     <div class="game-meta">
-      <a class="game-title" href="https://hugopigstudios.itch.io/scrap-racers" target="_blank">Scrap Racers</a>
+      <a class="game-title scrap" href="https://hugopigstudios.itch.io/scrap-racers" target="_blank">Scrap Racers</a>
       <span class="game-status">out now</span>
     </div>
 
     <div class="iframe-wrapper">
-      <iframe src="https://itch.io/embed/4408849?bg_color=eee3cd&fg_color=1b1b1b&link_color=2b4bd6" width="552" height="167">
+      <iframe src="https://itch.io/embed/4408849?bg_color=1b1820&fg_color=eee3cd&link_color=ff3d68" width="552" height="167">
         <a href="https://hugopigstudios.itch.io/scrap-racers">Scrap Racers by HugoPigStudios</a>
       </iframe>
     </div>
@@ -357,7 +366,7 @@
   <div class="game-item">
     <div class="game-meta">
       <a class="game-title" href="https://hugopigstudios.itch.io/da-artist" target="_blank">Da Artist</a>
-      <span class="game-status">out now</span>
+      <span class="game-status red">out now</span>
     </div>
 
     <div class="iframe-wrapper">
